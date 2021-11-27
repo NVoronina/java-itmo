@@ -1,4 +1,4 @@
-package homeworks;
+package homework2;
 
 public class Building {
     private int stages;

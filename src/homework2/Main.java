@@ -1,10 +1,9 @@
-package homeworks;
+package homework2;
 
 public class Main {
     public static void main(String[] args) {
         Calculations calculator = new Calculations();
 
-        System.out.println(calculator.sum(3, 2));
         System.out.println(calculator.sum(3.2, 2.32));
         System.out.println(calculator.sum(2342342134123e123, 23234523));
 
