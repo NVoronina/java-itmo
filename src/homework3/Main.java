@@ -8,7 +8,6 @@ public class Main {
         findNums(100);
         int[] array = new int[]{23, 33, 22, 3};
         int[] needle = new int[]{1, 3};
-        checkArray(array);
         System.out.println(inArray(needle, array));
     }
 
