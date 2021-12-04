@@ -1,12 +1,16 @@
 package homework4;
 
 import java.util.Arrays;
+import java.util.Random;
 import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
         isSorted(new int[]{3,4,34,55});
         isSorted(new int[]{3,2,34,4});
+        changeArray(new int[]{3,2,34,4});
+        System.out.println(findUnique(new int[]{1, 2, 3, 1, 2, 4}));
+        mergeSortRandom(8);
         arrayLog();
     }
 
@@ -51,5 +55,52 @@ public class Main {
             array[i] = scanner.nextInt();
         }
         System.out.println(Arrays.toString(array));
+    }
+
+    /**
+     * 3.	Напишите метод, который меняет местами первый и последний элемент массива. Пример вывода:
+     *
+     * Array 1: [5, 6, 7, 2]
+     * Array 2: [2, 6, 7, 5]
+     */
+    private static void changeArray(int[] array) {
+        System.out.println("Array 1:" + Arrays.toString(array));
+        int tmp = array[0];
+        array[0] = array[array.length - 1];
+        array[array.length - 1] = tmp;
+        System.out.println("Array 2:" + Arrays.toString(array));
+    }
+
+    /**
+     * 4.	Дан массив чисел. Найдите первое уникальное в этом массиве число.
+     * Например, для массива [1, 2, 3, 1, 2, 4] это число 3.
+     * @param array
+     */
+    private static int findUnique(int[] array) {
+        int[] sorted = lesson4.Main.bubbleSortedArray(array);
+        int tmp = sorted[0];
+        for (int i = 0; i < sorted.length; i++) {
+            if (tmp == sorted[i]) {
+                continue;
+            }
+            if (sorted[i] == sorted[i + 1]) {
+                tmp = sorted[i];
+            } else {
+                return sorted[i];
+            }
+        }
+        return -1;
+    }
+
+    /**
+     * 5.	Заполните массив случайным числами и отсортируйте его. Используйте сортировку слиянием.
+     */
+    private static void mergeSortRandom(int arrayLength) {
+        int[] array = new int[arrayLength];
+        Random rand = new Random();
+        for (int i = 0; i < arrayLength; i++ ) {
+            array[i] = rand.nextInt(100);
+        }
+        System.out.println(Arrays.toString(lesson4.Main.mergeSort(array)));
     }
 }
