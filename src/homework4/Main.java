@@ -6,12 +6,12 @@ import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
-        isSorted(new int[]{3,4,34,55});
-        isSorted(new int[]{3,2,34,4});
-        changeArray(new int[]{3,2,34,4});
-        System.out.println(findUnique(new int[]{1, 2, 3, 1, 2, 4}));
-        mergeSortRandom(8);
-        arrayLog();
+//        isSorted(new int[]{3,4,34,55});
+//        isSorted(new int[]{3,2,34,4});
+//        changeArray(new int[]{3,2,34,4});
+        System.out.println(findUnique(new int[]{1, 2, 3, 1, 2}));
+//        mergeSortRandom(8);
+//        arrayLog();
     }
 
     /**
@@ -83,7 +83,7 @@ public class Main {
             if (tmp == sorted[i]) {
                 continue;
             }
-            if (sorted[i] == sorted[i + 1]) {
+            if (i + 1 < sorted.length && sorted[i] == sorted[i + 1]) {
                 tmp = sorted[i];
             } else {
                 return sorted[i];
