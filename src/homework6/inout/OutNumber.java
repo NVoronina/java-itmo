@@ -1,8 +1,15 @@
 package homework6.inout;
 
+import java.util.Scanner;
+
 public class OutNumber extends InNumber {
-    public void outNum() {
-        System.out.println(this.num);
+    @Override
+    protected void outNum() {
+        super.outNum();
     }
 
+    public OutNumber() {
+        Scanner scanner = new Scanner(System.in);
+        this.num = scanner.nextInt();
+    }
 }

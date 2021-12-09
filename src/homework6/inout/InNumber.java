@@ -4,9 +4,7 @@ import java.util.Scanner;
 
 public class InNumber {
     protected int num;
-
-    public InNumber() {
-        Scanner scanner = new Scanner(System.in);
-        this.num = scanner.nextInt();
+    protected void outNum() {
+        System.out.println(this.num);
     }
 }
