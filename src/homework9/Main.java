@@ -39,7 +39,7 @@ public class Main {
     }
 
     private static Integer findSсore(String name, Map<User, Integer> mapUsers) {
-        for (Map.Entry<User, Integer> pair: mapUsers.entrySet()) {
+        for (Map.Entry<User, Integer> pair : mapUsers.entrySet()) {
             if (name.equalsIgnoreCase(pair.getKey().getName())) {
                 return pair.getValue();
             }
@@ -47,13 +47,13 @@ public class Main {
         return 0;
     }
 
-    private static Set<String> unique(ArrayList<String> collection) {
+    private static Set<String> unique(List<String> collection) {
         return new HashSet<>(collection);
     }
 
     private static ArrayList<Integer> fillArrayList(int max) {
         ArrayList<Integer> list = new ArrayList<>();
-        for(int i = 0; i < max; i++) {
+        for (int i = 0; i < max; i++) {
             list.add(i);
         }
         return list;
@@ -61,7 +61,7 @@ public class Main {
 
     private static LinkedList<Integer> fillLinkedList(int max) {
         LinkedList<Integer> list = new LinkedList<>();
-        for(int i = 0; i < max; i++) {
+        for (int i = 0; i < max; i++) {
             list.add(i);
         }
         return list;
@@ -69,7 +69,7 @@ public class Main {
 
     private static List<Integer> getElement(int max, List<Integer> list) {
         Random rand = new Random();
-        for(int i = 0; i < max; i++) {
+        for (int i = 0; i < max; i++) {
             list.get(rand.nextInt(1000000));
         }
         return list;
