@@ -23,10 +23,11 @@ public class CounterThreadPool {
         for (int i = 0; i < MAX_THREAD; i++) {
             listObj.add(new Counter());
         }
+        int totalCount = 0;
         try {
             List<Future<Integer>> results = threadPool.invokeAll(listObj);
             for (Future<Integer> result : results) {
-                System.out.println(result.get());
+                System.out.println(totalCount += result.get());
             }
         } catch (InterruptedException|ExecutionException e) {
             e.printStackTrace();
