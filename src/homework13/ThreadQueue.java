@@ -15,29 +15,27 @@ public class ThreadQueue {
     }
 
     static class Name implements Runnable {
-
-        private boolean queue = false;
+        boolean queue = false;
 
         @Override
         public void run() {
-            while (true) {
-                synchronized(this){
+            for (int i = 0; i < 5; i++) {
+                synchronized(this) {
                     while (queue) {
                         try {
-                            System.out.println("start wait");
-                            wait();
+                            wait(100);
                         } catch (InterruptedException e) {
-                            System.out.println("something wrong");
+                            e.printStackTrace();
                         }
                     }
                     queue = true;
+
                     System.out.println(Thread.currentThread().getName());
+
+                    queue = false;
+                    notifyAll();
                 }
-                queue = false;
-                notifyAll();
-                System.out.println(queue);
             }
         }
     }
-
 }
