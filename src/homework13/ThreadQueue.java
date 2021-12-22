@@ -4,6 +4,13 @@ import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
 public class ThreadQueue {
+
+    /**
+     * Напишите программу, в которой создаются два потока, каждый из которых выводит по очереди на консоль своё имя.
+     * Начать можно с написания своего класс-потока, который выводит в
+     * бесконечном цикле свое имя. Потом придется добавить синхронизацию с помощью wait() и notify().
+     * @param args
+     */
     public static void main(String[] args) {
         ExecutorService threadPool = Executors.newFixedThreadPool(2);
 
@@ -19,7 +26,7 @@ public class ThreadQueue {
 
         @Override
         public void run() {
-            for (int i = 0; i < 5; i++) {
+            while (true) {
                 synchronized(this) {
                     while (queue) {
                         try {
