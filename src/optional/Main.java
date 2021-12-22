@@ -20,13 +20,16 @@ public class Main {
             Container container2 = new Container(3.2);
 
             port.addContainer(container1);
-            port.addContainer(new Container(2));
+            port.addContainer(container2);
+
             port.removeContainer(container1);
 
             port.addShip(ship1);
             port.addShip(ship2);
             port.removeShip(ship1);
+
             port.moveContainerToShip(container2, ship2);
+            port.moveContainerFromShip(container2, ship2);
         } catch (TooManyShipsException|ShipOverflowException|ContainerException e) {
             System.out.println(e.getMessage());
         }
